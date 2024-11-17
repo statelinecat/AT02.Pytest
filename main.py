@@ -1,20 +1,18 @@
-import pytest
 
-def add(a, b):
-    return a + b
 
-def subtract(a, b):
-    return a - b
+def count_vowels(input_string):
 
-def multiply(a, b):
-    return a * b
+    vowels = "aeiouAEIOUаеёиоуыэюяАЕЁИОУЫЭЮЯ"
+    count = 0
 
-def divide(a, b):
-    return a / b
+    for char in input_string:
+        if char in vowels:
+            count += 1
 
-def rem_div(d, dr):
-    if dr == 0:
-        raise ValueError('На ноль делить нельзя')
-    return d % dr
+    return count
 
+
+string = "Привет, как дела, my friend?"
+result = count_vowels(string)
+print(f"Количество гласных в строке: {result}")
 
